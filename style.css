@@ -330,6 +330,7 @@ border-radius: 4px;
   border-radius: 6px;
   font-weight: bold;
   transition: background-color 0.3s ease, transform 0.2s ease;
+  white-space: nowrap; /* prevents text wrap on desktop */
 }
 
 .header-links a:hover {
@@ -344,8 +345,11 @@ border-radius: 4px;
   }
 
   .header-links a {
-    width: 90%;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
     text-align: center;
+    white-space: normal; /* allows wrapping on small screens */
   }
 }
 
