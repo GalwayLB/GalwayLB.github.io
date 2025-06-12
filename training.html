@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Training Plan</title>
+      <link rel="stylesheet" href="style.css" />
+      <!-- Font Awesome Cdn Link -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+      
+    </head>
+    <body>
+        <div class="sidebar">
+            <div class="logo"></div>
+            <ul class="menu">
+                <li>
+                    <a href="./index.html">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="./training.html">
+                        <i class="fas fa-user"></i>
+                        <span>Training Plans</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="./knowledge.html">
+                        <i class="fa-solid fa-map"></i>
+                        <span>Local Knowledge</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="./exercise.html">
+                        <i class="fa-solid fa-anchor"></i>
+                        <span>Exercise Data</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="./individual.html">
+                        <i class="fas fa-user"></i>
+                        <span>Individual Data</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="./crew-dash.html">
+                        <i class="fa-solid fa-people-group"></i>
+                        <span>Crew Data</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://site.rnli2.org/" target="_blank">
+                        <i class="fa-solid fa-globe"></i>
+                        <span>RNLI 2</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.rcams.org.uk/dashboard" target="_blank">
+                        <i class="fa-solid fa-calendar-days"></i>
+                        <span>RCAMS</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="main--content">
+            <div class="header--wrapper">
+                <div class="header--title">
+
+                    <div class="header-links">
+                        <a href="https://site.rnli2.org/sendit/572eba90-996d-450d-83af-68d4aabd10d0" target="_blank">Learning Zone - Login</a>
+                        <a href="https://rnli.sharepoint.com/teams/horizon/Shared%20Documents/Forms/AllItems.aspx?id=%2Fteams%2Fhorizon%2FShared%20Documents%2FCrew%20Member%20Handbook%20TP%2DLB%2D01%2Epdf&parent=%2Fteams%2Fhorizon%2FShared%20Documents" target="_blank">Crew Member Handbook</a>
+                        <a href="https://rnli.sharepoint.com/teams/horizon/Shared%20Documents/Forms/AllItems.aspx?id=%2Fteams%2Fhorizon%2FShared%20Documents%2FLifeboat%20Training%20Standards%20Handbook%20TP%2DOCF%2D02%2Epdf&parent=%2Fteams%2Fhorizon%2FShared%20Documents" target="_blank">Training Standards</a>
+                        <a href="https://rnli.sharepoint.com/teams/horizon/Shared%20Documents/Forms/AllItems.aspx?id=%2Fteams%2Fhorizon%2FShared%20Documents%2FLifeboat%20Pass%20Out%20and%20Revalidation%20Handbook%20TP%2DOCF%2D04%2Epdf&parent=%2Fteams%2Fhorizon%2FShared%20Documents" target="_blank">Pass Out Handbook</a>
+                        <a href="https://rnli.sharepoint.com/teams/horizon/SitePages/lifeboat-operations/ilb-b-class.aspx" target="_blank">SOPs</a>
+                        <a href="https://rnli.sharepoint.com/teams/horizon/SitePages/lifeboat-operations/station-local-operating-procedures.aspx?q=RefinableString146%3a%22Galway%22" target="_blank">LOPs</a></div>                       
+                        
+                </div>
+                <div class="user--info">
+                        <img src="./Images/logo.jpg" alt=""/>
+                </div>
+            </div>
+            <div class="training--container table--container">
+                <table class="">
+                    <thead>
+                        <tr>
+                            <th>Stage 1</th>
+                            <th>Crew Member Handbook</th>
+                            <th>Lifeboat Training Standards</th>
+                            <th  colspan="2" style="text-align: center">SOP/Resources</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><b>Hazard Awareness</b></td>
+                            <td><span class="pdf-option" onclick="handbookPage(this, '24')">p24</span></td>
+                            <td><span class="pdf-option" onclick="trainingPage(this, '49')">1.2.1</span></td>
+                            <td><a href='https://rnli.csod.com/ui/lms-learning-details/app/course/34685488-1fdc-4837-a5aa-dcaba61ca28c' target="_blank">e-learning</a></td>
+                            <td></td>                            
+                        </tr>
+                        <tr>
+                            <td>Manual Handling</td>
+                            <td><span class="pdf-option" onclick="handbookPage(this, '39')">p39</span></td>
+                            <td><span class="pdf-option" onclick="trainingPage(this, '51')">1.2.2</span></td>
+                            <td><a href='https://rnli.csod.com/ui/lms-learning-details/app/course/b04e72f5-2a30-45c9-bd6c-dee87de5377a' target="_blank">e-learning</a></td>
+                           <td></td> 
+                        </tr>
+                        <tr>
+                            <td>Hazardous Substances</td>
+                            <td><span class="pdf-option" onclick="handbookPage(this, '43')">p43</span></td>
+                            <td><span class="pdf-option" onclick="trainingPage(this, '53')">1.2.3</span></td>                            
+                            <td><a href='https://rnli.csod.com/ui/lms-learning-details/app/course/eb4ffa4c-845c-4efb-a0a5-56494046de0a' target="_blank">e-learning</a></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Noise and Vibration</td>
+                            <td><span class="pdf-option" onclick="handbookPage(this, '87')">p87</span></td>
+                            <td><span class="pdf-option" onclick="trainingPage(this, '54')">1.2.4</span></td>
+                            <td><a href='https://rnli.csod.com/ui/lms-learning-details/app/course/c4b77aaa-bb93-4b21-90b3-17dc627eeefc' target="_blank">e-learning</a></td>
+                            <td></td>                            
+                        </tr>
+                        <tr>
+                            <td>Fire Safety</td>
+                            <td><span class="pdf-option" onclick="handbookPage(this, '94')">p94</span></td>
+                            <td><span class="pdf-option" onclick="trainingPage(this, '56')">1.2.5</span></td>
+                            <td><a href='https://rnli.csod.com/ui/lms-learning-details/app/course/8e9e1b70-592a-4d40-9ab9-0c7f2c01d09e' target="_blank">e-learning</a></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Personal Safety and Wellbeing</td>
+                            <td><span class="pdf-option" onclick="handbookPage(this, '54')">p54</span></td>
+                            <td><span class="pdf-option" onclick="trainingPage(this, '57')">1.2.6</span></td>
+                            <td><a href='https://rnli.csod.com/ui/lms-learning-details/app/course/f3e65401-5d2e-4a5f-8cbe-e25793159704' target="_blank">e-learning</a></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Safe to the Shout</td>
+                            <td><span class="pdf-option" onclick="handbookPage(this, '105')">p105</span></td>
+                            <td><span class="pdf-option" onclick="trainingPage(this, '62')">1.2.7</span></td>
+                            <td><a href='https://rnli.csod.com/ui/lms-learning-details/app/course/fb36913e-1f7b-4536-9500-f0a75a9bd4dc' target="_blank">e-learning</a></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Working at Height</td>
+                            <td></td>
+                            <td><span class="pdf-option" onclick="trainingPage(this, '97')">1.10.1</span></td>
+                            <td><a href='https://rnli.csod.com/ui/lms-learning-details/app/course/1a930f97-5a45-4600-911c-ff5812d8e7a4' target="_blank">e-learning</a></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>First Aid 1</td>
+                            <td></td>
+                            <td><span class="pdf-option" onclick="trainingPage(this, '256')">8.1.1</span></td>
+                            <td><a href='https://rnli.csod.com/ui/lms-learning-details/app/course/1b526e5d-1625-4f3e-a0e5-1fc6204afff2' target="_blank">e-learning</a></td>
+                            <td></td>
+                        </tr>
+                    <thead>
+                        <tr style="background-color: #109131">
+                            <th  colspan="5" style="text-align: center">Safety and Induction Complete</th>
+                        </tr>
+                    </thead>
+                    </tbody>
+
+                    <thead>
+                        <tr>
+                            <th>Stage 2</th>
+                            <th>Crew Member Handbook</th>
+                            <th>Lifeboat Training Standards</th>
+                            <th  colspan="2" style="text-align: center">SOP/Resources</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>PPE</td>
+                            <td><span class="pdf-option" onclick="handbookPage(this, '31')">p31</span></td>
+                            <td><span class="pdf-option" onclick="trainingPage(this, '48')">1.1.1</span></td>
+                            <td><a href="https://rnli.sharepoint.com/teams/horizon/Shared%20Documents/Forms/AllItems.aspx?id=%2Fteams%2Fhorizon%2FShared%20Documents%2FAssessment%20Guidance%20%2D%20Task%201%2E1%2E1%20PPE%2Epdf&parent=%2Fteams%2Fhorizon%2FShared%20Documents" target="_blank"> Assessment Guidance</a></td>
+                            <td><a href="https://youtu.be/DB9LeW2zg8s">Video</a></td>
+                        </tr>
+                        <tr>
+                            <td>SAR Unit Layout</td>
+                            <td><span class="pdf-option" onclick="handbookPage(this, '121')">p121</span></td>
+                            <td><span class="pdf-option" onclick="trainingPage(this, '63')">1.3.1</span></td>
+                            <td><a href="https://rnli.sharepoint.com/teams/horizon/Shared%20Documents/Forms/AllItems.aspx?id=%2Fteams%2Fhorizon%2FShared%20Documents%2FSAR%20Layout%20%2D%20Assessment%20Guidance%20%2D%20Task%201%2E3%2E1%2Epdf&amp;parent=%2Fteams%2Fhorizon%2FShared%20Documents" target="_blank">Assessment Guidance</a></td>
+                            <td></td>
+                        </tr>
+                    <thead>
+                        <tr style="background-color: #109131">
+                            <th  colspan="5" style="text-align: center">Safe to go Afloat</th>
+                        </tr>
+                    </thead>
+                    </tbody>
+                    <thead>
+                        <tr>
+                            <th>Stage 3</th>
+                            <th>Crew Member Handbook</th>
+                            <th>Lifeboat Training Standards</th>
+                            <th  colspan="2" style="text-align: center">SOP/Resources</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        </tr>
+                        <tr>
+                            <td>SAR Unit Firefighting</td>
+                            <td><span class="pdf-option" onclick="handbookPage(this, '107')">p107</span></td>
+                            <td><span class="pdf-option" onclick="trainingPage(this, '75')">1.5.1</span></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Emergency and Survival</td>
+                            <td><span class="pdf-option" onclick="handbookPage(this, '108')">p108</span></td>
+                            <td><span class="pdf-option" onclick="trainingPage(this, '81')">1.6.1</span></td>
+                            <td><a href="https://rnli.sharepoint.com/teams/horizon/Shared%20Documents/Forms/AllItems.aspx?id=%2Fteams%2Fhorizon%2FShared%20Documents%2FA85%20Emergency%20Procedures%20EOP%2Epdf&parent=%2Fteams%2Fhorizon%2FShared%20Documents"  target="_blank">EOP</a></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Pyrotechnics</td>
+                            <td><span class="pdf-option" onclick="handbookPage(this, '117')">p117</span></td>
+                            <td><span class="pdf-option" onclick="trainingPage(this, '92')">1.7.1</span></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Launch Procedures</td>
+                            <td><span class="pdf-option" onclick="handbookPage(this, '128')">p128</span></td>
+                            <td><span class="pdf-option" onclick="trainingPage(this, '100')">3.1.1</span></td>
+                            <td><a href="https://rnli.sharepoint.com/teams/horizon/Shared%20Documents/Forms/AllItems.aspx?id=%2Fteams%2Fhorizon%2FShared%20Documents%2FGalway%20002%20Davit%20Launch%20and%20Recovery%20LOP%2Epdf&parent=%2Fteams%2Fhorizon%2FShared%20Documents"  target="_blank">Davit LOP</a></td>
+                            <td><a href="https://rnli.sharepoint.com/teams/horizon/Shared%20Documents/Forms/AllItems.aspx?id=%2Fteams%2Fhorizon%2FShared%20Documents%2FGalway%20003%20Manual%20Davit%20Launch%20LOP%2Epdf&parent=%2Fteams%2Fhorizon%2FShared%20Documents"  target="_blank">Manual Launch LOP</a></td>
+                        </tr>
+                        <tr>
+                            <td>Recovery Procedures</td>
+                            <td><span class="pdf-option" onclick="handbookPage(this, '128')">p128</span></td>
+                            <td><span class="pdf-option" onclick="trainingPage(this, '103')">3.1.2</span></td>
+                            <td><a href="https://rnli.sharepoint.com/teams/horizon/Shared%20Documents/Forms/AllItems.aspx?id=%2Fteams%2Fhorizon%2FShared%20Documents%2FA85%20Launch%20and%20Recovery%20SOP%2Epdf&parent=%2Fteams%2Fhorizon%2FShared%20Documents"  target="_blank">SOP</a></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Lookout</td>
+                            <td><span class="pdf-option" onclick="handbookPage(this, '164')">p164</span></td>
+                            <td><span class="pdf-option" onclick="trainingPage(this, '134')">4.1.1</span></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Rope Handling</td>
+                            <td><span class="pdf-option" onclick="handbookPage(this, '144')">p144</span></td>
+                            <td><span class="pdf-option" onclick="trainingPage(this, '139')">4.2.1</span></td>
+                            <td></td>
+                            <td><a href='https://rnli.csod.com/ui/lms-learning-details/app/video/2720ac7d-c98c-4af4-a195-ff2616f839d9'  target="_blank">e-learning</a></td>
+                        </tr>
+                    <thead>
+                        <tr style="background-color: #109131">
+                            <th  colspan="5" style="text-align: center">Safe to go on Service</th>
+                        </tr>
+                    </thead>
+                    </tbody>
+                    <thead>
+                        <tr>
+                            <th>Stage 4</th>
+                            <th>Crew Member Handbook</th>
+                            <th>Lifeboat Training Standards</th>
+                            <th  colspan="2" style="text-align: center">SOP/Resources</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Role and Responsibilities 1</td>
+                            <td><span class="pdf-option" onclick="handbookPage(this, '100')">p100</span></td>
+                            <td><span class="pdf-option" onclick="trainingPage(this, '68')">1.4.1</span></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Anchoring</td>
+                            <td><span class="pdf-option" onclick="handbookPage(this, '205')">p205</span></td>
+                            <td><span class="pdf-option" onclick="trainingPage(this, '144')">4.3.1</span></td>
+                            <td><a href="https://rnli.sharepoint.com/teams/horizon/Shared%20Documents/Forms/AllItems.aspx?id=%2Fteams%2Fhorizon%2FShared%20Documents%2FA85%20Anchoring%20SOP%2Epdf&parent=%2Fteams%2Fhorizon%2FShared%20Documents"  target="_blank">SOP</a></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Veering Down</td>
+                            <td><span class="pdf-option" onclick="handbookPage(this, '215')">p215</span></td>
+                            <td><span class="pdf-option" onclick="trainingPage(this, '150')">4.4.1</span></td>
+                            <td><a href="https://rnli.sharepoint.com/teams/horizon/Shared%20Documents/Forms/AllItems.aspx?id=%2Fteams%2Fhorizon%2FShared%20Documents%2FA85%20Veering%20Down%20SOP%2Epdf&parent=%2Fteams%2Fhorizon%2FShared%20Documents"  target="_blank">SOP</a></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Towing</td>
+                            <td><span class="pdf-option" onclick="handbookPage(this, '218')">p218</span></td>
+                            <td><span class="pdf-option" onclick="trainingPage(this, '152')">4.5.1</span></td>
+                            <td><a href="https://rnli.sharepoint.com/teams/horizon/Shared%20Documents/Forms/AllItems.aspx?id=%2Fteams%2Fhorizon%2FShared%20Documents%2FA85%20Towing%20SOP%2Epdf&parent=%2Fteams%2Fhorizon%2FShared%20Documents"  target="_blank">SOP</a></td>
+                            <td><a href="https://youtu.be/JZ9hNQv2Jg4"  target="_blank">Video</a></td>
+                        </tr>
+                        <tr>
+                            <td>Stability Introduction</td>
+                            <td><span class="pdf-option" onclick="handbookPage(this, '298')">p298</span></td>
+                            <td><span class="pdf-option" onclick="trainingPage(this, '162')">4.6.1</span></td>
+                            <td></td>
+                            <td><a href='https://rnli.csod.com/ui/lms-learning-details/app/course/84aa34f4-10f2-483b-acb8-8fe1fc999072'  target="_blank">e-learning</a></td>
+                        </tr>
+                        <tr>
+                            <td>Mooring/Berthing</td>
+                            <td><span class="pdf-option" onclick="handbookPage(this, '202')">p202</span></td>
+                            <td><span class="pdf-option" onclick="trainingPage(this, '174')">4.7.3</span></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Locate and Assist 1</td>
+                            <td><span class="pdf-option" onclick="handbookPage(this, '238')">p238</span></td>
+                            <td><span class="pdf-option" onclick="trainingPage(this, '194')">5.1.1</span></td>
+                            <td></td>
+                            <td><a href="https://rnli.csod.com/LMS/Video/LaunchVideo.aspx?loid=484be403-b4c5-483d-8e7b-45dd8f2316f1"  target="_blank">Video</a></td>
+                        </tr>
+                        <tr>
+                            <td>Operate VHF</td>
+                            <td><span class="pdf-option" onclick="handbookPage(this, '280')">p280</span></td>
+                            <td><span class="pdf-option" onclick="trainingPage(this, '214')">6.1.1</span></td>
+                            <td></td>
+                            <td><a href='https://rnli.csod.com/ui/lms-learning-details/app/course/527d952b-59c0-4629-96a9-3dd398d82e36'  target="_blank">e-learning</a></td>
+                        </tr>
+                        <tr>
+                            <td>Local Knowledge</td>
+                            <td>7.4.2</td>
+                            <td><span class="pdf-option" onclick="trainingPage(this, '251')">7.4.2</span></td>
+                            <td></td>
+                            <td><a href="https://rnli.sharepoint.com/teams/horizon/Shared%20Documents/Forms/AllItems.aspx?id=%2Fteams%2Fhorizon%2FShared%20Documents%2FGalway%20001%20Local%20Knowledge%20LOP%2Epdf&parent=%2Fteams%2Fhorizon%2FShared%20Documents"  target="_blank">Galway 001 Local Knowledge</a></td>
+                        </tr>
+                        <tr>
+                    <thead>
+                        <tr style="background-color: #109131">
+                            <th  colspan="5" style="text-align: center">Tier 1 Pass Out</th>
+                        </tr>
+                    </thead>
+                    </tbody>
+                    <thead>
+                        <tr>
+                            <th>Stage 5</th>
+                            <th>Crew Member Handbook</th>
+                            <th>Lifeboat Training Standards</th>
+                            <th  colspan="2" style="text-align: center">SOP/Resources</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Risk Assessment</td>
+                            <td><span class="pdf-option" onclick="handbookPage(this, '86')">p86</span></td>
+                            <td><span class="pdf-option" onclick="trainingPage(this, '94')">1.8.1</span></td>
+                            <td></td>
+                            <td><a href=''>e-learning</a></td>
+                        </tr>
+                        <tr>
+                            <td>Watchkeeping</td>
+                            <td><span class="pdf-option" onclick="handbookPage(this, '164')">p164</span></td>
+                            <td><span class="pdf-option" onclick="trainingPage(this, '135')">4.1.2</span></td>
+                            <td></td>
+                            <td><a href=''>e-learning</a></td>
+                        </tr>
+                        <tr>
+                            <td>Hydrology</td>
+                            <td><span class="pdf-option" onclick="handbookPage(this, '194')">p194</span></td>
+                            <td><span class="pdf-option" onclick="trainingPage(this, '163')">4.6.2</span></td>
+                            <td></td>
+                            <td><a href='https://rnli.csod.com/ui/lms-learning-details/app/video/f4d3759a-dc94-4d88-a785-0473ae6f3495' target="_blank">e-learning</a></td>
+                        </tr>
+                        <tr>
+                            <td>Hull Types</td>
+                            <td><span class="pdf-option" onclick="handbookPage(this, '183')">p183</span></td>
+                            <td><span class="pdf-option" onclick="trainingPage(this, '163')">4.6.2</span></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Helming 1</td>
+                            <td><span class="pdf-option" onclick="handbookPage(this, '187')">p187</span></td>
+                            <td><span class="pdf-option" onclick="trainingPage(this, '165')">4.7.1</span></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Helicopter Opertations</td>
+                            <td><span class="pdf-option" onclick="handbookPage(this, '228')">p228</span></td>
+                            <td><span class="pdf-option" onclick="trainingPage(this, '186')">4.10.1</span></td>
+                            <td><a href="https://rnli.sharepoint.com/teams/horizon/Shared%20Documents/Forms/AllItems.aspx?id=%2Fteams%2Fhorizon%2FShared%20Documents%2FILB%20Helicopter%20Operations%20SOP%2Epdf&parent=%2Fteams%2Fhorizon%2FShared%20Documents">SOP</a></td>
+                            <td><a href="https://rnli.csod.com/ui/lms-learning-details/app/course/90a5cc74-456d-46da-bcc5-fc4d74e249d7" target="_blank">e-learning</a></td>
+                        </tr>
+                        <tr>
+                            <td>Navigation Introductions</td>
+                            <td><span class="pdf-option" onclick="handbookPage(this, '288')">p288</span></td>
+                            <td><span class="pdf-option" onclick="trainingPage(this, '228')">7.1.1</span></td>
+                            <td><a href="https://rnli.sharepoint.com/teams/horizon/Shared%20Documents/Forms/AllItems.aspx?id=%2Fteams%2Fhorizon%2FShared%20Documents%2FILB%2DIRH%20Navigation%20Safety%20SOP%2Epdf&parent=%2Fteams%2Fhorizon%2FShared%20Documents">SOP</a></td>
+                            <td></td>
+                        </tr>
+                        <thead>
+                        <tr style="background-color: #109131">
+                            <th  colspan="5" style="text-align: center">Tier 2 Pass Out</th>
+                        </tr>
+                    </thead>
+                    </tbody>
+                </table>
+            </div>
+                <div class="training--container pdf--container">
+                    <iframe id="pdf-frame" style="width: 100%; height: 90vh; border: none;"></iframe>
+
+                </div>   
+        </div>     
+    </body>
+</html>
+
+<script>
+
+  function handbookPage(el, page) {
+    const iframe = document.getElementById("pdf-frame");
+    iframe.src = `viewer.html?file=pdfs/crew_handbook.pdf#page=${page}&zoom=page-width&scroll=vertical&spread=none`;
+
+    // Remove "selected" class from all options
+    const options = document.querySelectorAll('.pdf-option');
+    options.forEach(opt => opt.classList.remove('selected'));
+
+    // Add "selected" to clicked element
+    el.classList.add('selected');
+  }
+
+  function trainingPage(el, page) {
+    const iframe = document.getElementById("pdf-frame");
+    iframe.src = `viewer.html?file=pdfs/training_standards.pdf#page=${page}&zoom=page-width&scroll=vertical&spread=none`;
+    
+    // Remove "selected" class from all options
+    const options = document.querySelectorAll('.pdf-option');
+    options.forEach(opt => opt.classList.remove('selected'));
+
+    // Add "selected" to clicked element
+    el.classList.add('selected');
+  }
+  
+</script>
+
+
+
+

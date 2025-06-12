@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <title>RNLI Dashboard</title>
+      <link rel="stylesheet" href="style.css" />
+      <!-- Font Awesome Cdn Link -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+      
+    </head>
+    <body>
+        <div class="sidebar">
+            <div class="logo"></div>
+            <ul class="menu">
+                <li class="active">
+                    <a href="./index.html">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="./training.html">
+                        <i class="fa-solid fa-dumbbell"></i></i>
+                        <span>Training Plans</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="./knowledge.html">
+                        <i class="fa-solid fa-map"></i>
+                        <span>Local Knowledge</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="./exercise.html">
+                        <i class="fa-solid fa-anchor"></i>
+                        <span>Exercise Data</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="./individual.html">
+                        <i class="fas fa-user"></i>
+                        <span>Individual Data</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="./crew-dash.html">
+                        <i class="fa-solid fa-people-group"></i>
+                        <span>Crew Data</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://site.rnli2.org/" target="_blank">
+                        <i class="fa-solid fa-globe"></i>
+                        <span>RNLI 2</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.rcams.org.uk/dashboard" target="_blank">
+                        <i class="fa-solid fa-calendar-days"></i>
+                        <span>RCAMS</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="main--content">
+            <div class="header--wrapper">
+                <div class="header--title">
+                    <h2>Dashboard</h2>
+                </div>
+                <div class="user--info">
+                    <img src="./Images/logo.jpg" alt=""/>
+                </div>
+            </div>
+
+            <!-- Main content -->
+            <div class="main">
+            <div class="row top-row">
+                <div class="box roster-box">
+                    <iframe id="rosterIframe" src="roster.html" style="width: 100%; border: none;"></iframe>
+                </div>
+
+                <div class="box">
+                <iframe 
+                    src="https://calendar.google.com/calendar/embed?src=galwaylifeboatstation%40gmail.com&ctz=Europe%2FDublin"
+                    width="100%" height="410" style="border: 1px solid #777;" frameborder="0" scrolling="no">
+                </iframe>
+                </div>
+                <div class="box">
+                <div class="tide-widget-wrapper">
+                    <script src="https://tides.today/en/%F0%9F%8C%8D/ireland/county-galway/galway/widget.js" async></script>
+                    <script src="https://tides.today/en/%F0%9F%8C%8D/ireland/county-galway/galway/widget-init.js?includeMap=false&includeWeather=false&includeStyles=false&includeTitle=true&numberDays=1&weatherUnit=c" async></script>
+                    <div id="tidewidget__655"></div>
+                </div>
+                </div>
+            </div>
+
+            <div class="row bottom-row">
+                <div class="box windy-box">
+                <iframe 
+                    src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=mm&metricTemp=°C&metricWind=kt&zoom=10&overlay=wind&product=ecmwf&level=surface&lat=53.165&lon=-8.848&detailLat=53.274&detailLon=-9.049&detail=true" 
+                    width="100%" height="600" frameborder="0">
+                </iframe>
+                </div>
+            </div>
+            </div>       
+            
+        </div>
+<script>
+  window.addEventListener("message", (event) => {
+    if (event.data?.type === "resizeRosterIframe") {
+      const iframe = document.getElementById("rosterIframe");
+      iframe.style.height = `${event.data.height + 20}px`; // Add a little padding
+    }
+  });
+</script>     
+    </body>
+
+</html>

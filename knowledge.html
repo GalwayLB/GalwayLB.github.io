@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+      <title>Local Knowledge</title>
+      <link rel="stylesheet" href="style.css" />
+      <!-- Font Awesome Cdn Link -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+
+<style>
+  .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background-image: url("./Images/background.jpg");
+    gap: 10px;
+    padding: 10px;
+    width: 100%; 
+  }
+
+  .box {
+    position: relative;
+    height: 150px;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    cursor: pointer;
+    padding: 10px;
+    text-shadow: 1px 1px 3px black;
+    border-radius: 8px;
+  }
+
+  /* Popup Modal */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    padding: 40px;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.8);
+  }
+
+  .close {
+    position: absolute;
+    right: 15px; top: 10px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+.modal-content {
+  width: 90%;
+  max-width: 80%;
+}
+.modal-image {
+  width: 100%;
+  height: auto;
+}
+
+
+</style>
+</head>
+<body>
+  <div class="sidebar">
+    <div class="logo"></div>
+    <ul class="menu">
+        <li>
+            <a href="./index.html">
+                <i class="fas fa-tachometer-alt"></i>
+                <span>Dashboard</span>
+            </a>
+        </li>
+        <li>
+            <a href="./training.html">
+                <i class="fas fa-user"></i>
+                <span>Training Plans</span>
+            </a>
+        </li>
+        <li class="active">
+            <a href="./knowledge.html">
+                <i class="fa-solid fa-map"></i>
+                <span>Local Knowledge</span>
+            </a>
+        </li>
+        <li>
+            <a href="./exercise.html">
+                <i class="fa-solid fa-anchor"></i>
+                <span>Exercise Data</span>
+            </a>
+        </li>
+        <li>
+            <a href="./individual.html">
+                <i class="fas fa-user"></i>
+                <span>Individual Data</span>
+            </a>
+        </li>
+        <li>
+            <a href="./crew-dash.html">
+                <i class="fa-solid fa-people-group"></i>
+                <span>Crew Data</span>
+            </a>
+        </li>
+        <li>
+            <a href="https://site.rnli2.org/" target="_blank">
+                <i class="fa-solid fa-globe"></i>
+                <span>RNLI 2</span>
+            </a>
+        </li>
+        <li>
+            <a href="https://www.rcams.org.uk/dashboard" target="_blank">
+                <i class="fa-solid fa-calendar-days"></i>
+                <span>RCAMS</span>
+            </a>
+        </li>
+    </ul>
+  </div>
+          <div class="main--content">
+            <div class="header--wrapper">
+                <div class="header--title">
+                    <h2>Local Knowledge</h2>
+                </div>
+                <div class="user--info">
+                    <img src="./Images/logo.jpg" alt=""/>
+                </div>
+            </div>
+
+        <div class="knowledge-container">
+          <div class="box" style="background-image: url('/Images/knowledge/Spiddle-min.jpg')" onclick="openModal('modal1')"><h2>Spiddle to Furbo</h2></div>
+          <div class="box" style="background-image: url('/Images/knowledge/Furbo-min.jpg')" onclick="openModal('modal2')"><h2>Furbo to Barna</h2></div>
+          <div class="box" style="background-image: url('/Images/knowledge/Barna-min.jpg')" onclick="openModal('modal3')"><h2>Barna to White Strand</h2></div>
+          <div class="box" style="background-image: url('/Images/knowledge/MuttonIsland-min.jpg')" onclick="openModal('modal4')"><h2>Mutton Island to Ardfry Point</h2></div>
+          <div class="box" style="background-image: url('/Images/knowledge/Kilcolgan-min.jpg')" onclick="openModal('modal5')"><h2>Kilcolgan Point to Island Eddy</h2></div>
+          <div class="box" style="background-image: url('/Images/knowledge/Rincarna-min.jpg')" onclick="openModal('modal6')"><h2>Rincarna & mouth of Kinvarra Bay</h2></div>
+          <div class="box" style="background-image: url('/Images/knowledge/KinvarraBay-min.jpg')" onclick="openModal('modal7')"><h2>Kinvarra Bay</h2></div>
+          <div class="box" style="background-image: url('/Images/knowledge/DeerIsland-min.jpg')" onclick="openModal('modal8')"><h2>Deer Island to Finvarra Point</h2></div>
+          <div class="box" style="background-image: url('/Images/knowledge/Ballyvaghan-min.jpg')" onclick="openModal('modal9')"><h2>Ballyvaghan Bay</h2></div>
+          <div class="box" style="background-image: url('/Images/knowledge/Blackhead-min.jpg')" onclick="openModal('modal10')"><h2>Black Head</h2></div>
+
+        </div>
+
+        <!-- Modals -->
+        <div id="modal1" class="modal">
+          <div class="modal-content">
+            <span class="close" onclick="closeModal('modal1')">&times;</span>
+            <p>Spiddle to Furbo</p>
+            <img src="./Images/knowledge/photos/Spiddle.jpg" alt="" class="modal-image">
+          </div>
+        </div>
+
+        <div id="modal2" class="modal">
+          <div class="modal-content">
+            <span class="close" onclick="closeModal('modal2')">&times;</span>
+            <p>Furbo to Barna</p>
+              <img src="./Images/knowledge/photos/Furbo.jpg" alt="" class="modal-image">
+          </div>
+        </div>
+
+        <div id="modal3" class="modal">
+          <div class="modal-content">
+            <span class="close" onclick="closeModal('modal3')">&times;</span>
+            <p>Barna to White Strand</p>
+            <img src="./Images/knowledge/photos/Barna.jpg" alt="" class="modal-image">
+          </div>
+        </div>
+        <div id="modal4" class="modal">
+          <div class="modal-content">
+            <span class="close" onclick="closeModal('modal4')">&times;</span>
+            <p>Mutton Island to Ardfry Point</p>
+            <img src="./Images/knowledge/photos/MuttonIsland.jpg" alt="" class="modal-image">
+          </div>
+        </div>
+
+        <div id="modal5" class="modal">
+          <div class="modal-content">
+            <span class="close" onclick="closeModal('modal5')">&times;</span>
+            <p>Kilcolgan Point to Island Eddy</p>
+              <img src="./Images/knowledge/photos/Kilcolgan.jpg" alt="" class="modal-image">
+          </div>
+        </div>
+
+        <div id="modal6" class="modal">
+          <div class="modal-content">
+            <span class="close" onclick="closeModal('modal6')">&times;</span>
+            <p>Rincarna & mouth of Kinvarra Bay</p>
+              <img src="./Images/knowledge/photos/Rincarna.jpg" alt="" class="modal-image">
+          </div>
+        </div>
+        <div id="modal7" class="modal">
+          <div class="modal-content">
+            <span class="close" onclick="closeModal('modal7')">&times;</span>
+            <p>Kinvarra Bay</p>
+              <img src="./Images/knowledge/photos/KinvarraBay.jpg" alt="" class="modal-image">
+          </div>
+        </div>
+
+        <div id="modal8" class="modal">
+          <div class="modal-content">
+            <span class="close" onclick="closeModal('modal8')">&times;</span>
+            <p>Deer Island to Finvarra Point</p>
+              <img src="./Images/knowledge/photos/DeerIsland.jpg" alt="" class="modal-image">
+          </div>
+        </div>
+
+        <div id="modal9" class="modal">
+          <div class="modal-content">
+            <span class="close" onclick="closeModal('modal9')">&times;</span>
+            <p>Ballyvaghan Bay</p>
+            <img src="./Images/knowledge/photos/Ballyvaghan.jpg" alt="" class="modal-image">
+          </div>
+        </div>
+        <div id="modal10" class="modal">
+          <div class="modal-content">
+            <span class="close" onclick="closeModal('modal10')">&times;</span>
+            <p>Black Head</p>
+              <img src="./Images/knowledge/photos/Blackhead.jpg" alt="" class="modal-image">
+          </div>
+        </div>
+
+        <script>
+        function openModal(id) {
+          document.getElementById(id).style.display = 'block';
+        }
+        function closeModal(id) {
+          document.getElementById(id).style.display = 'none';
+        }
+        </script>
+
+</body>
+</html>

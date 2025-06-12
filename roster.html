@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Training Roster</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background-color: #002663;
+      color: #1a3b5d;
+      padding: 15px;
+      margin: 0;
+    }
+
+    .week-header {
+      text-align: center;
+      color: #ffffff;
+      margin: 10px 0 20px;
+      font-size: 1.1em;
+      font-weight: bold;
+    }
+
+    h2 {
+      text-align: center;
+      color: #ffffff;
+      margin-bottom: 10px;
+    }
+    
+    #roster {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 10px;
+    }
+
+    .shift-day {
+      background: #e3f2fd;
+      border-left: 4px solid #2196f3;
+      padding: 10px;
+      border-radius: 6px;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.08);
+      font-size: 0.95em;
+    }
+
+    .shift-day strong {
+      font-size: 1em;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .person {
+      margin-left: 8px;
+      padding-left: 8px;
+      border-left: 2px solid #64b5f6;
+      margin-top: 3px;
+    }
+
+    .controls {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .controls button {
+      background: #1976d2;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      margin: 3px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 0.9em;
+    }
+
+    .controls button:hover {
+      background: #0d47a1;
+    }
+
+    .no-data {
+      text-align: center;
+      margin-top: 20px;
+      font-style: italic;
+      color: #c62828;
+    }
+  </style>
+</head>
+<body>
+
+<h2>Training Roster</h2>
+<div class="week-header">Loading week...</div>
+<div id="roster">Loading roster...</div>
+<div class="controls">
+  <button onclick="changeWeek(-1)">← Previous Week</button>
+  <button onclick="changeWeek(1)">Next Week →</button>
+</div>
+
+<script>
+  const SHEET_ID = "1WQDn0nLnuifiICNUGOhloCOrFLw3T0odx2zkERO2HVU";
+  const SHEET_NAME = "Sheet1";
+  const JSONP_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?sheet=${SHEET_NAME}`;
+
+  let rosterData = {};
+  let currentWeekOffset = 0;
+
+  function fetchRosterData() {
+    const script = document.createElement('script');
+    script.src = JSONP_URL + '&tqx=responseHandler:handleRoster';
+    document.body.appendChild(script);
+  }
+
+function handleRoster(response) {
+  rosterData = {};
+
+  const rows = response.table.rows;
+  for (let row of rows) {
+    const dateCell = row.c[0];
+    const name = row.c[1]?.v || "";
+    const role = row.c[2]?.v || "";
+
+    if (!dateCell || !name) continue;
+
+    const dateString = dateCell.v; // e.g., "Date(2025,4,29)"
+    const dateMatch = dateString.match(/Date\((\d+),(\d+),(\d+)\)/);
+    if (!dateMatch) continue;
+
+    const year = parseInt(dateMatch[1], 10);
+    const month = parseInt(dateMatch[2], 10);
+    const day = parseInt(dateMatch[3], 10);
+
+    // Fix: Use UTC date to avoid timezone shift
+    const jsDate = new Date(Date.UTC(year, month, day));
+
+    // Convert to YYYY-MM-DD string
+    const dateKey = jsDate.toISOString().split('T')[0];
+
+    if (!rosterData[dateKey]) rosterData[dateKey] = [];
+    rosterData[dateKey].push({ name, role });
+  }
+
+  renderRoster();
+}
+
+
+
+  function formatDate(date) {
+    const d = date.getDate().toString().padStart(2, '0');
+    const m = (date.getMonth() + 1).toString().padStart(2, '0');
+    const y = date.getFullYear().toString().slice(2);
+    return `${d}/${m}/${y}`;
+  }
+
+  function renderRoster() {
+    const container = document.getElementById("roster");
+    container.innerHTML = "";
+
+    const weekHeader = document.querySelector(".week-header");
+
+    const today = new Date();
+    today.setDate(today.getDate() + currentWeekOffset * 7);
+    const monday = new Date(today);
+    monday.setDate(monday.getDate() - ((monday.getDay() + 6) % 7)); // force Monday
+    const sunday = new Date(monday);
+    sunday.setDate(monday.getDate() + 6);
+
+    // Set header
+    weekHeader.textContent = `Week: ${formatDate(monday)} – ${formatDate(sunday)}`;
+
+    let anyData = false;
+
+    for (let d = new Date(monday); d <= sunday; d.setDate(d.getDate() + 1)) {
+      const dateKey = d.toISOString().split('T')[0];
+      const people = rosterData[dateKey];
+
+      if (!people) continue;
+
+      anyData = true;
+
+      const div = document.createElement("div");
+      div.className = "shift-day";
+      div.innerHTML = `<strong>${d.toLocaleDateString(undefined, { weekday: 'long' })} (${formatDate(d)}):</strong>`;
+
+      people.forEach(p => {
+        div.innerHTML += `<div class="person">• ${p.name} — ${p.role || 'N/A'}</div>`;
+      });
+
+      container.appendChild(div);
+    }
+
+    if (!anyData) {
+      container.innerHTML = `<div class="no-data">No data for this week.</div>`;
+    }
+  }
+
+  function changeWeek(offset) {
+    currentWeekOffset += offset;
+    renderRoster();
+  }
+
+  fetchRosterData();
+</script>
+
+</body>
+</html>
